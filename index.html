@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushmitha’s Shopping</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      margin: 0; padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #5a86ff;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(90, 134, 255, 0.3);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin: 8px 0 0 0;
+      font-style: italic;
+    }
+    main {
+      max-width: 600px;
+      background: white;
+      margin: 30px auto;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #5a86ff;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    form label {
+      display: block;
+      margin: 12px 0 6px 0;
+      font-weight: 600;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.8px solid #5a86ff;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="tel"]:focus,
+    form select:focus {
+      border-color: #3742fa;
+      outline: none;
+    }
+    .products-list {
+      margin: 20px 0;
+    }
+    .products-list label {
+      font-weight: normal;
+      display: block;
+      padding: 6px 0;
+    }
+    .products-list input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.1);
+    }
+    button.submit-btn {
+      width: 100%;
+      background-color: #3742fa;
+      border: none;
+      color: white;
+      padding: 14px 0;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: background-color 0.3s ease;
+    }
+    button.submit-btn:hover {
+      background-color: #1e2ecc;
+    }
+    .whatsapp-contact {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .whatsapp-contact a {
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-contact a:hover {
+      background-color: #1da851;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    @media (max-width: 640px) {
+      main {
+        margin: 20px 15px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sushmitha’s Shopping</h1>
+    <p>We are made for each other...</p>
+  </header>
+  <main>
+    <h2>Place Your Order</h2>
+    <form id="orderForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required />
+
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="+1 234 567 8900" required pattern="[+0-9\s]{7,15}" />
+
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+        <option value="">Select your country</option>
+        <option value="USA">USA</option>
+        <option value="India">India</option>
+        <option value="UK">United Kingdom</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <div class="products-list">
+        <label>Select Products you want:</label>
+        <label><input type="checkbox" name="products" value="Groceries" /> Groceries</label>
+        <label><input type="checkbox" name="products" value="Clothes" /> Clothes</label>
+        <label><input type="checkbox" name="products" value="Electronics" /> Electronics</label>
+        <label><input type="checkbox" name="products" value="Home Items" /> Home Items</label>
+        <label><input type="checkbox" name="products" value="Books" /> Books</label>
+      </div>
+
+      <label for="additional">Additional Details</label>
+      <input type="text" id="additional" name="additional" placeholder="Any special instructions?" />
+
+      <button type="submit" class="submit-btn">Submit Order</button>
+    </form>
+
+    <div class="whatsapp-contact">
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">Chat with Sushmitha on WhatsApp</a>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Sushmitha’s Shopping. All rights reserved.
+  </footer>
+
+  <script>
+    // Handle form submission
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const mobile = this.mobile.value.trim();
+      const country = this.country.value;
+      const additional = this.additional.value.trim();
+
+      // Get selected products
+      const products = Array.from(this.products)
+        .filter(chk => chk.checked)
+        .map(chk => chk.value);
+
+      if (!name || !email || !mobile || !country) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      if (products.length === 0) {
+        alert('Please select at least one product.');
+        return;
+      }
+
+      // Here you can add code to send form data to your backend or email (not possible in pure HTML without backend)
+
+      alert(`Thank you, ${name}! Your order for [${products.join(', ')}] has been received.\nWe will contact you shortly.`);
+
+      this.reset();
+    });
+  </script>
+</body>
+</html>
