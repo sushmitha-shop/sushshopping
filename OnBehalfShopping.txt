@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sushmitha's Shopping Service</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #e07a5f;
+    }
+    p {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background: #e07a5f;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #d65a4a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🛍️ Sushmitha's Personal Shopper</h2>
+    <p>“We are made for each other…”</p>
+    
+    <form onsubmit="handleSubmit(event)">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" required />
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" required />
+
+      <label for="country">Country:</label>
+      <select id="country" required>
+        <option value="">-- Select Country --</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Canada</option>
+        <option>Australia</option>
+        <option>Germany</option>
+        <option>Other</option>
+      </select>
+
+      <label for="list">List of Things You Want Me to Buy:</label>
+      <textarea id="list" rows="5" placeholder="Eg: 2 t-shirts, kids shoes, Indian snacks..." required></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert("Thank you! Your request has been received. ❤️ I will contact you soon.");
+    }
+  </script>
+
+</body>
+</html>
