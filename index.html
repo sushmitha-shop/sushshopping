@@ -150,14 +150,10 @@
       const country = document.getElementById('country').value;
       const list = document.getElementById('list').value.trim();
 
-      // Basic validation done by required + pattern attribute
-
-      // Here you would handle sending data to your email or backend
-      // But GitHub Pages cannot send emails — so let's just show a thank you message for now.
-
+      // Show a thank-you message (because GitHub Pages cannot send emails)
       document.getElementById('responseMsg').textContent = `Thank you, ${name}! Your request has been received. I will contact you soon via WhatsApp or email.`;
 
-      // Optionally, clear form
+      // Clear form fields after submission
       e.target.reset();
 
       return false;
@@ -166,6 +162,7 @@
 
 </body>
 </html>
+
 
 
 
