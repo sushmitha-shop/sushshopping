@@ -2,163 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sushmitha's Shopping Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sushmitha Shopping Services</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-      color: #4a148c;
-      margin: 0; padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f0;
+      color: #333;
+      padding: 30px;
+      line-height: 1.6;
     }
-    h1 {
-      font-weight: 700;
-      font-size: 2.5rem;
-      margin-bottom: 0.5em;
-      text-shadow: 1px 1px 3px #880e4f;
-    }
-    p.description {
-      font-size: 1.2rem;
-      margin-bottom: 1.5em;
-      color: #6a1b9a;
-    }
-    form {
-      background: white;
-      padding: 25px 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(128, 0, 128, 0.2);
-      width: 100%;
-      max-width: 420px;
-      box-sizing: border-box;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 12px 14px;
-      margin-bottom: 16px;
-      border: 2px solid #ce93d8;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #4a148c;
-      resize: none;
-      background: #f3e5f5;
-    }
-    button {
-      width: 100%;
-      background: #9c27b0;
-      border: none;
-      color: white;
-      padding: 15px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background: #7b1fa2;
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      margin-bottom: 25px;
-      background: #25d366;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
-      transition: background-color 0.3s ease;
-    }
-    .whatsapp-btn:hover {
-      background: #1ebe57;
-    }
-    .contact-email {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #4a148c;
+    header {
+      background-color: #ffb6b9;
+      padding: 20px;
       text-align: center;
+      border-radius: 12px;
     }
-    .contact-email a {
-      color: #7b1fa2;
-      text-decoration: none;
-      font-weight: 700;
+    header h1 {
+      margin: 0;
+      color: #fff;
     }
-    .contact-email a:hover {
-      text-decoration: underline;
-    }
-    .footer {
+    section {
       margin-top: 30px;
-      font-size: 0.9rem;
-      color: #4a148c;
-      font-weight: 600;
+    }
+    footer {
+      margin-top: 40px;
       text-align: center;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <h1>Sushmitha's Shopping Assistant 🛒</h1>
-  <p class="description">Helping NRI families shop from India easily and reliably</p>
+  <header>
+    <h1>Sushmitha's Personal Shopping Service</h1>
+    <p>“We are made for each other” ❤️</p>
+  </header>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/917207387668?text=Hello%20Sushmitha,%20I%20want%20to%20place%20an%20order." 
-     target="_blank" 
-     rel="noopener" 
-     class="whatsapp-btn">
-    Order Now on WhatsApp 📱
-  </a>
+  <section>
+    <h2>About</h2>
+    <p>
+      I’m Sushmitha, a passionate woman building a business with love and dedication. I help busy NRIs and customers across the world by shopping and shipping items from India — so you don’t have to worry about time or effort.
+    </p>
+  </section>
 
-  <!-- Contact Email -->
-  <div class="contact-email">
-    Or email me at: <a href="mailto:sushmithaani099@gmail.com">sushmithaani099@gmail.com</a>
-  </div>
+  <section>
+    <h2>How It Works</h2>
+    <ol>
+      <li>You send me your shopping list (WhatsApp or Email).</li>
+      <li>I purchase everything from trusted stores in India.</li>
+      <li>I safely pack and ship to your international address.</li>
+    </ol>
+  </section>
 
-  <!-- Info Form -->
-  <form id="orderForm" onsubmit="return handleSubmit(event)">
-    <input type="text" id="name" name="name" placeholder="Your Full Name" required />
-    <input type="email" id="email" name="email" placeholder="Your Email Address" required />
-    <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}" title="Enter 10 digit mobile number" />
-    <select id="country" name="country" required>
-      <option value="" disabled selected>Select Your Country</option>
-      <option>USA</option>
-      <option>UK</option>
-      <option>Canada</option>
-      <option>Australia</option>
-      <option>Other</option>
-    </select>
-    <textarea id="list" name="list" rows="5" placeholder="Write your shopping list here..." required></textarea>
-    <button type="submit">Send Request via Email</button>
-  </form>
+  <section>
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:sushmithaani099@gmail.com">sushmithaani099@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/917207387668" target="_blank">Message me now</a></p>
+  </section>
 
-  <p class="footer" id="responseMsg"></p>
-
-  <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      // Get form values
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const mobile = document.getElementById('mobile').value.trim();
-      const country = document.getElementById('country').value;
-      const list = document.getElementById('list').value.trim();
-
-      // Show a thank-you message (because GitHub Pages cannot send emails)
-      document.getElementById('responseMsg').textContent = `Thank you, ${name}! Your request has been received. I will contact you soon via WhatsApp or email.`;
-
-      // Clear form fields after submission
-      e.target.reset();
-
-      return false;
-    }
-  </script>
+  <footer>
+    &copy; 2025 Sushmitha Shopping Services — Made with ❤️ in India
+  </footer>
 
 </body>
 </html>
