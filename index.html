@@ -2,74 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sushmitha Shopping Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sushmitha's Shopping Assistant</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f0fa;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      color: #4a148c;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
       padding: 20px;
-      text-align: center;
     }
     h1 {
-      color: #c2185b;
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 0.3em;
+      text-shadow: 1px 1px 3px #880e4f;
+    }
+    p.description {
+      font-size: 1.2rem;
+      margin-bottom: 1.5em;
+      color: #6a1b9a;
     }
     form {
-      background: #fff;
-      padding: 20px;
-      margin: 30px auto;
-      border-radius: 10px;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: white;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(128, 0, 128, 0.2);
+      width: 100%;
+      max-width: 420px;
+      box-sizing: border-box;
     }
     input, select, textarea {
       width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      border: 2px solid #ce93d8;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #4a148c;
+      transition: border-color 0.3s ease;
+      resize: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #7b1fa2;
+      background: #f3e5f5;
     }
     button {
-      background: #c2185b;
-      color: white;
-      padding: 12px;
-      border: none;
       width: 100%;
-      border-radius: 5px;
+      background: #9c27b0;
+      border: none;
+      color: white;
+      padding: 15px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 6px 15px rgba(156, 39, 176, 0.4);
     }
     button:hover {
-      background: #a3154a;
+      background: #7b1fa2;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      margin-bottom: 25px;
+      background: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebe57;
     }
     .footer {
       margin-top: 30px;
-      font-size: 0.9em;
-      color: #777;
+      font-size: 0.9rem;
+      color: #4a148c;
+      font-weight: 600;
+    }
+    @media(max-width:480px){
+      h1 { font-size: 2rem;}
+      form { padding: 20px;}
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Sushmitha's Shopping Assistant 🛍️</h1>
-  <p>We shop and ship from India for NRI families around the world 💌</p>
 
+  <h1>Sushmitha's Shopping Assistant 🛒</h1>
+  <p class="description">Helping NRI families shop from India easily and reliably</p>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/917207387668?text=Hello%20Sushmitha,%20I%20want%20to%20place%20an%20order." 
+     target="_blank" 
+     rel="noopener" 
+     class="whatsapp-btn">
+    Order Now on WhatsApp 📱
+  </a>
+
+  <!-- Order Form -->
   <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="tel" name="phone" placeholder="Phone Number" required />
+    <input type="text" name="name" placeholder="Your Full Name" required />
+    <input type="email" name="email" placeholder="Your Email Address" required />
+    <input type="tel" name="phone" placeholder="Mobile Number" required />
     <select name="country" required>
-      <option value="">-- Select Country --</option>
+      <option value="">Select Your Country</option>
       <option>USA</option>
       <option>UK</option>
       <option>Canada</option>
       <option>Australia</option>
       <option>Other</option>
     </select>
-    <textarea name="shoppingList" rows="5" placeholder="Enter what you need..."></textarea>
-    <button type="submit">Send Request</button>
+    <textarea name="shoppingList" rows="5" placeholder="Write your shopping list here..."></textarea>
+    <button type="submit">Send Request via Email</button>
   </form>
 
-  <p class="footer">📩 You’ll receive a reply via WhatsApp or Email shortly</p>
+  <p class="footer">You will get a reply shortly by WhatsApp or Email. Thank you!</p>
+
 </body>
 </html>
+
 
