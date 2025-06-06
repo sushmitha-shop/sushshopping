@@ -9,18 +9,17 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #fce4ec, #f8bbd0);
       color: #4a148c;
-      margin: 0; padding: 0;
+      margin: 0; padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       justify-content: center;
-      padding: 20px;
     }
     h1 {
       font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 0.3em;
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
       text-shadow: 1px 1px 3px #880e4f;
     }
     p.description {
@@ -36,6 +35,8 @@
       width: 100%;
       max-width: 420px;
       box-sizing: border-box;
+      pointer-events: none; /* disable input so no submission */
+      opacity: 0.8;
     }
     input, select, textarea {
       width: 100%;
@@ -46,13 +47,9 @@
       font-size: 1rem;
       font-weight: 600;
       color: #4a148c;
-      transition: border-color 0.3s ease;
       resize: none;
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #7b1fa2;
       background: #f3e5f5;
+      cursor: default;
     }
     button {
       width: 100%;
@@ -63,12 +60,8 @@
       font-size: 1.3rem;
       font-weight: 700;
       border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 6px 15px rgba(156, 39, 176, 0.4);
-    }
-    button:hover {
-      background: #7b1fa2;
+      cursor: not-allowed;
+      opacity: 0.6;
     }
     .whatsapp-btn {
       display: inline-block;
@@ -86,15 +79,27 @@
     .whatsapp-btn:hover {
       background: #1ebe57;
     }
+    .contact-email {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #4a148c;
+      text-align: center;
+    }
+    .contact-email a {
+      color: #7b1fa2;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-email a:hover {
+      text-decoration: underline;
+    }
     .footer {
       margin-top: 30px;
       font-size: 0.9rem;
       color: #4a148c;
       font-weight: 600;
-    }
-    @media(max-width:480px){
-      h1 { font-size: 2rem;}
-      form { padding: 20px;}
+      text-align: center;
     }
   </style>
 </head>
@@ -111,26 +116,33 @@
     Order Now on WhatsApp 📱
   </a>
 
-  <!-- Order Form -->
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="Your Full Name" required />
-    <input type="email" name="email" placeholder="Your Email Address" required />
-    <input type="tel" name="phone" placeholder="Mobile Number" required />
-    <select name="country" required>
-      <option value="">Select Your Country</option>
+  <!-- Contact Email -->
+  <div class="contact-email">
+    Or email me at: <a href="mailto:sushmithaani099@gmail.com">sushmithaani099@gmail.com</a>
+  </div>
+
+  <!-- Info Form (disabled for viewing only) -->
+  <form>
+    <input type="text" placeholder="Your Full Name" />
+    <input type="email" placeholder="Your Email Address" />
+    <input type="tel" placeholder="Mobile Number" />
+    <select>
+      <option>Select Your Country</option>
       <option>USA</option>
       <option>UK</option>
       <option>Canada</option>
       <option>Australia</option>
       <option>Other</option>
     </select>
-    <textarea name="shoppingList" rows="5" placeholder="Write your shopping list here..."></textarea>
-    <button type="submit">Send Request via Email</button>
+    <textarea rows="5" placeholder="Write your shopping list here..."></textarea>
+    <button disabled>Send Request via Email</button>
   </form>
 
   <p class="footer">You will get a reply shortly by WhatsApp or Email. Thank you!</p>
 
 </body>
 </html>
+
+
 
 
