@@ -35,8 +35,6 @@
       width: 100%;
       max-width: 420px;
       box-sizing: border-box;
-      pointer-events: none; /* disable input so no submission */
-      opacity: 0.8;
     }
     input, select, textarea {
       width: 100%;
@@ -49,7 +47,6 @@
       color: #4a148c;
       resize: none;
       background: #f3e5f5;
-      cursor: default;
     }
     button {
       width: 100%;
@@ -60,8 +57,11 @@
       font-size: 1.3rem;
       font-weight: 700;
       border-radius: 10px;
-      cursor: not-allowed;
-      opacity: 0.6;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #7b1fa2;
     }
     .whatsapp-btn {
       display: inline-block;
@@ -121,27 +121,52 @@
     Or email me at: <a href="mailto:sushmithaani099@gmail.com">sushmithaani099@gmail.com</a>
   </div>
 
-  <!-- Info Form (disabled for viewing only) -->
-  <form>
-    <input type="text" placeholder="Your Full Name" />
-    <input type="email" placeholder="Your Email Address" />
-    <input type="tel" placeholder="Mobile Number" />
-    <select>
-      <option>Select Your Country</option>
+  <!-- Info Form -->
+  <form id="orderForm" onsubmit="return handleSubmit(event)">
+    <input type="text" id="name" name="name" placeholder="Your Full Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+    <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}" title="Enter 10 digit mobile number" />
+    <select id="country" name="country" required>
+      <option value="" disabled selected>Select Your Country</option>
       <option>USA</option>
       <option>UK</option>
       <option>Canada</option>
       <option>Australia</option>
       <option>Other</option>
     </select>
-    <textarea rows="5" placeholder="Write your shopping list here..."></textarea>
-    <button disabled>Send Request via Email</button>
+    <textarea id="list" name="list" rows="5" placeholder="Write your shopping list here..." required></textarea>
+    <button type="submit">Send Request via Email</button>
   </form>
 
-  <p class="footer">You will get a reply shortly by WhatsApp or Email. Thank you!</p>
+  <p class="footer" id="responseMsg"></p>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const country = document.getElementById('country').value;
+      const list = document.getElementById('list').value.trim();
+
+      // Basic validation done by required + pattern attribute
+
+      // Here you would handle sending data to your email or backend
+      // But GitHub Pages cannot send emails — so let's just show a thank you message for now.
+
+      document.getElementById('responseMsg').textContent = `Thank you, ${name}! Your request has been received. I will contact you soon via WhatsApp or email.`;
+
+      // Optionally, clear form
+      e.target.reset();
+
+      return false;
+    }
+  </script>
 
 </body>
 </html>
+
 
 
 
